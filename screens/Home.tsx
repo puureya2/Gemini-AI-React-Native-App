@@ -40,33 +40,33 @@ const Home: FunctionComponent<Props> = () => {
   const cardsData = [
     {
       id: 1,
-      accountNo: "1234567890",
-      balance: 20000.00,
-      alias: "First Debit",
-      logo: logo1,
+      routine: "Chest Routine",
+      equipment: "Dumbbells",
+      date: "JAN 03",
+      img: background,
     },
     {
       id: 2,
-      accountNo: "1234567890",
-      balance: 20000.00,
-      alias: "Second Debit",
-      logo: logo2,
+      routine: "Leg Day",
+      equipment: "Barbell",
+      date: "JAN 04",
+      img: background,
     },
     {
       id: 3,
-      accountNo: "1234567890",
-      balance: 20000.00,
-      alias: "Third Debit",
-      logo: logo1,
+      routine: "Back Workout",
+      equipment: "Pull-Up Bar",
+      date: "JAN 05",
+      img: background,
     },
-  ];
+  ];  
 
   const TransactionData = [
     {
       id: 1,
-      title: "Taxi",
-      subtitle: "Uber car",
-      amount: "-$86.00",
+      title: "Safe workouts for tricep tendonitis",
+      subtitle: "Home Workout",
+      amount: "10 mins",
       date: "14 Sep 2021",
       art: {
         icon: "car",
@@ -75,9 +75,9 @@ const Home: FunctionComponent<Props> = () => {
     },
     {
       id: 2,
-      title: "Shopping",
-      subtitle: "Ali Express",
-      amount: "-$286.00",
+      title: "Unsaved",
+      subtitle: "Gym Workout",
+      amount: "25 mins",
       date: "14 Sep 2021",
       art: {
         icon: "cart",
@@ -101,21 +101,21 @@ const Home: FunctionComponent<Props> = () => {
     {
       id: 1,
       name: "Kevin Chifamba",
-      amount: "2430.50",
+      amount: "Novice",
       background: colors.tertiary,
       img: portrait1,
     },
     {
       id: 2,
       name: "Harleen Scot",
-      amount: "4450.50",
+      amount: "Beginner",
       background: colors.primary,
       img: portrait2,
     },
     {
       id: 3,
       name: "James Corbyn",
-      amount: "6250.00",
+      amount: "Professional",
       background: colors.accent,
       img: portrait3,
     },

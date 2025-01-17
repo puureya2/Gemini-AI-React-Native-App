@@ -37,7 +37,7 @@ const TransactionSection: FunctionComponent<TransactionSectionProps> = (props) =
             <TransactionRow style={{ marginBottom: 25 }}>
 
                 <RegularText textStyles={{ fontSize: 19, color: colors.secondary }}>
-                    Transaction
+                    Conversations
                 </RegularText>
 
                 <SmallText textStyles={{ color: colors.secondary }}>

@@ -1,152 +1,113 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components/native";
-import { View } from "react-native";
+import { Image } from "react-native";
 
-// navigation
+// Navigation
 import { useNavigation } from "@react-navigation/native";
 
-import { ScreenWidth } from "@/components/shared";
 import { colors } from "../colors";
 
 import RegularText from "../Texts/RegularText";
 import SmallText from "../Texts/SmallText";
 
-import card_bg from "../../assets/bgs/background_transparent.png";
+import { ScreenWidth } from "@/components/shared";
 
-import { formatBalance } from "@/utils/format";
-
-
-const CardBackground = styled.ImageBackground.attrs({
-    resizeMode: 'stretch',
-})
-`
-  height: 120;
-  width: ${ScreenWidth * 0.21}px;
-  background-color: ${colors.accent};
-  border-radius: 25px;
-  margin-right: 25px;
+// Styled Components
+const CardBackground = styled.View`
+  height: 180px;
+  width: ${ScreenWidth * 0.3}px;
+  background-color: ${colors.white};
+  border-radius: 15px;
   overflow: hidden;
+  margin-bottom: 20px;
+  margin-right: 15px; /* Added spacing between cards */
 `;
 
 const CardTouchable = styled.TouchableHighlight`
   height: 100%;
-  border-radius: 25px;
+  border-radius: 15px;
 `;
 
-const TouchableView = styled.View`
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px;
-  flex: 1;
+const ImageSection = styled.Image`
+  height: 60%;
+  width: 100%;
+  border-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: ${colors.gray}; /* Default background color */
 `;
 
-const CardRow = styled.View`
+const BottomSection = styled.View`
+  height: 40%;
+  width: 100%;
+  padding: 10px 15px;
   justify-content: space-between;
+  background-color: ${colors.white};
+`;
+
+const Row = styled.View`
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
+  margin-bottom: 5px; /* Reduced vertical spacing */
 `;
 
-const Logo = styled.Image.attrs({
-    resizeMode: 'contain',
-})
-`
-  width: 100%;
-  height: 100%;
-  flex: 1;
+const LeftText = styled.View`
+  align-items: flex-start;
 `;
 
+const RightText = styled.View`
+  align-items: flex-end;
+`;
 
 // types
 import { CardProps } from "./types";
 import { Props as HomeProps } from "@/screens/Home";
 
 const CardItem: FunctionComponent<CardProps> = (props) => {
-    
-  //configuring navigation
+  // Configuring navigation
   const navigation = useNavigation<HomeProps["navigation"]>();
 
-  // move to Balance Page
+  // Navigate to Balance Page
   const handlePress = () => {
-    navigation.navigate("Balance", {...props});
+    navigation.navigate("Balance", { ...props });
   };
 
   return (
-      <CardBackground source={card_bg}>
+    <CardBackground>
+      <CardTouchable underlayColor={colors.secondary} onPress={handlePress}>
+        <>
+          {/* Top Image Section */}
+          <ImageSection source={props.img} />
 
-          <CardTouchable
-              underlayColor={colors.secondary}
-              onPress={handlePress}
-          >
+          {/* Bottom Section */}
+          <BottomSection>
+            <Row>
+              {/* Routine Details */}
+              <LeftText>
+                <RegularText textStyles={{ color: colors.primary }}>
+                  {props.routine}
+                </RegularText>
+              </LeftText>
 
-              <TouchableView>
+              {/* Date (right-aligned) */}
+              <RightText>
+                <SmallText textStyles={{ color: colors.darkgray }}>
+                  {props.date}
+                </SmallText>
+              </RightText>
+            </Row>
 
-                  <CardRow>
-                    <RegularText textStyles={{ color: colors.white }}>
-                      ****** {props.accountNo.slice(6, 10)}
-                    </RegularText>
-                  </CardRow>
-
-                  <CardRow>
-
-                      <View style={{ flex: 3 }}>
-                        <SmallText textStyles={{ marginBottom: 5, color: colors.lightgray }}>
-                          Total Balance
-                        </SmallText>
-                        <RegularText textStyles={{ fontSize: 19 }}>
-                            ${formatBalance(props.balance)}
-                        </RegularText>
-                      </View>
-
-                      <Logo source={props.logo} />
-
-                  </CardRow>
-
-              </TouchableView>
-
-          </CardTouchable>
-
-      </CardBackground>
+            <Row>
+              <SmallText textStyles={{ color: colors.secondary }}>
+                {props.equipment}
+              </SmallText>
+            </Row>
+          </BottomSection>
+        </>
+      </CardTouchable>
+    </CardBackground>
   );
-
 };
 
 export default CardItem;
-
-// return (
-//   <CardBackground source={card_bg}>
-
-//       <CardTouchable
-//           underlayColor={colors.secondary}
-//           onPress={handlePress}
-//       >
-
-//           <TouchableView>
-
-//               <CardRow>
-//                 <RegularText textStyles={{ color: colors.white }}>
-//                   ****** {props.accountNo.slice(6, 10)}
-//                 </RegularText>
-//               </CardRow>
-
-//               <CardRow>
-
-//                   <View style={{ flex: 3 }}>
-//                     <SmallText textStyles={{ marginBottom: 5, color: colors.lightgray }}>
-//                       Total Balance
-//                     </SmallText>
-//                     <RegularText textStyles={{ fontSize: 19 }}>
-//                         ${formatBalance(props.balance)}
-//                     </RegularText>
-//                   </View>
-
-//                   <Logo source={props.logo} />
-
-//               </CardRow>
-
-//           </TouchableView>
-
-//       </CardTouchable>
-
-//   </CardBackground>
-// );

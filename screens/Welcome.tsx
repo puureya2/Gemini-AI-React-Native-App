@@ -62,10 +62,10 @@ const Welcome: FunctionComponent<Props> = ({ navigation }) => {
 
                 <BottomSection>
                   <BigText textStyles={{ width: "70%", marginBottom: 25 }}>
-                    Best payment method, connects your money to your friends, blah blah
+                    AI Gym Buddy, an enhanced workout experience just for you!
                   </BigText>
                   <SmallText textStyles={{ width: "70%", marginBottom: 25 }}>
-                    Best payment method, connects your money to your friends, blah blah
+                    Gemini-AI powered fitness coach for home-workouts.
                   </SmallText>
                   <RegularButton onPress={() => { navigation.navigate("Home") }}>
                     Get Started

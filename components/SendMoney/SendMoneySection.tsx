@@ -72,9 +72,10 @@ const SendMoneySection: FunctionComponent<SendMoneySectionProps> = (props) => {
               textStyles={{
                 fontSize: 19,
                 color: colors.secondary,
+                paddingBottom: 5,
               }}
             >
-              Send money to
+              Choose a coach
             </RegularText>
             <TextButton onPress={() => alert('Add')}>
               <SmallText
