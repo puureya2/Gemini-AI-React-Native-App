@@ -16,6 +16,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Welcome from "@/screens/Welcome";
 import Home from "@/screens/Home";
 import Balance from "@/screens/Balance";
+import Routine from "@/screens/Routine";
+import CameraScreen from "@/screens/CameraScreen";
 
 import { CardProps } from "@/components/Cards/types";
 
@@ -24,6 +26,8 @@ export type RootStackParamList = {
     Welcome: undefined;
     Home: undefined;
     Balance: CardProps;
+    Routine: CardProps;
+    CameraScreen: undefined;
 };
 
 
@@ -91,10 +95,10 @@ const RootStack: FunctionComponent = () => {
             />
 
             <Stack.Screen 
-                name="Balance"
-                component={Balance}
+                name="Routine"
+                component={Routine}
                 options={({ route }) => ({
-                    headerTitle: route.params?.alias,
+                    headerTitle: route.params?.routine,
                     headerTitleAlign: "center",
                     headerBackImage: (props) => (
                         <Ionicons
@@ -108,6 +112,12 @@ const RootStack: FunctionComponent = () => {
                         paddingLeft: 0,
                     },
                 })}
+            />
+
+            <Stack.Screen 
+                name="CameraScreen"
+                component={CameraScreen}
+                options={{ headerShown: false }}
             />
 
         </Stack.Navigator>

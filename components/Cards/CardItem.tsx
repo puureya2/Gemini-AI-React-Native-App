@@ -70,7 +70,7 @@ const CardItem: FunctionComponent<CardProps> = (props) => {
 
   // Navigate to Balance Page
   const handlePress = () => {
-    navigation.navigate("Balance", { ...props });
+    navigation.navigate("Routine", { ...props });
   };
 
   return (
