@@ -1,50 +1,61 @@
-# Welcome to your Expo app 👋
+# 🏋️ AI Gym Buddy
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A cross-platform mobile application that leverages AI to deliver real-time fitness advice through natural language chat and image recognition. Built with **React Native**, styled with **NativeWind**, and powered by **Gemini AI**, this project combines cutting-edge tech with a sleek UI for both iOS and Android users.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Features
 
-   ```bash
-   npm install
-   ```
+- 🤖 **AI Chat** – Ask fitness-related questions and get responses from Google Gemini API
+- 🧠 **Image Recognition** – Scan gym equipment to receive guidance on usage and targeted muscle groups
+- 📱 **Hybrid Design** – Built once, runs on both Android & iOS using Expo Go and NativeWind
+- 🧪 **Appium Testing** – Automated UI tests ensure reliability and smooth experience
+- 🧩 **7 Key Modules**:
+  - Live AI chat coach
+  - Equipment scanner (camera input)
+  - Daily workout planner
+  - Progress tracker
+  - AI-powered meal suggestion
+  - Motivation dashboard
+  - Personalized fitness feedback
 
-2. Start the app
+---
 
-   ```bash
-    npx expo start
-   ```
+## 🛠️ Tech Stack
 
-In the output, you'll find options to open the app in a
+| Role                      | Tech Used                        |
+|---------------------------|----------------------------------|
+| Frontend Framework        | React Native (TypeScript)        |
+| Styling                   | NativeWind (Tailwind for RN)     |
+| AI Integration            | Gemini API                       |
+| Camera / Image Handling   | Expo Camera                      |
+| UI Testing                | Appium                           |
+| Deployment                | Expo Go                          |
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📷 Equipment Scanner (AI Image Module)
 
-## Get a fresh project
+- Uses device camera (via Expo)
+- Sends equipment image to Gemini API for classification
+- Returns:
+  - Equipment name
+  - Proper usage
+  - Targeted muscle group
+  - Related workouts
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
-```
+## 🧪 Testing
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- Fully tested navigation and UI flows using **Appium**
+- Includes test cases for:
+  - Chat bot interaction
+  - Image scan module
+  - User navigation across modules
+  - API response handling
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## 📁 Project Structure
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
